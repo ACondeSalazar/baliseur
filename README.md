@@ -4,6 +4,8 @@
 ###
 
 <h2 align="center">Baliseur is a simple VS Code extension that allows you to place tags in your files and easily navigate between them</h2>
+<img height="200" width="300" src="https://i.imgflip.com/8kusho.gif"  />
+<img height="200" src="https://i.imgflip.com/8kue7d.gif"  />
 
 ###
 
@@ -11,7 +13,7 @@
 
 ###
 
-<img align="right" height="200" src="https://i.imgflip.com/8kue7d.gif"  />
+
 
 ###
 
