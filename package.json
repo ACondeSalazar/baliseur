@@ -1,0 +1,77 @@
+{
+  "name": "baliseur",
+  "displayName": "baliseur",
+  "description": "",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.72.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:baliseur.viewTags"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "baliseur.viewTags",
+        "title": "View Tags"
+      },
+      {
+        "command": "baliseur.goToTag",
+        "title": "Go to Tag"
+      }
+    ],
+    "views": {
+      "explorer": [
+        {
+          "id": "filesTagsView",
+          "name": "Navigate Custom Tags"
+        }
+      ]
+    },
+    "configuration":{
+      "title": "baliseur : Custom Tags Settings",
+      "properties": {
+        "Tags Starts with": {
+          "type": "string",
+          "default": "//#",
+          "description": "Every line that starts with this characters will be considered tags (default is '//#')"
+        }
+      }
+    },
+    "menus": {
+      "commandPalette": [
+        {
+          "command": "baliseur.goToTag",
+          "when": "false"
+        }
+      ]
+    }
+  },
+  "icons": {
+    "file": "icons/file_icon.svg",
+    "tag": "icons/tag_icon.svg"
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.87.0",
+    "@types/mocha": "^10.0.6",
+    "@types/node": "18.x",
+    "@typescript-eslint/eslint-plugin": "^7.0.2",
+    "@typescript-eslint/parser": "^7.0.2",
+    "eslint": "^8.56.0",
+    "typescript": "^5.3.3",
+    "@vscode/test-cli": "^0.0.6",
+    "@vscode/test-electron": "^2.3.9"
+  }
+}
